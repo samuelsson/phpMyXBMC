@@ -1,0 +1,146 @@
+
+/* ==|== Imports ================================================================================
+	Imported files before this (main) style
+   ============================================================================================== */
+
+@import url("../styles/normalize.css");
+
+/* ==|== Variables ==============================================================================
+	CamelCase with first letter in lower case for all variables
+   ============================================================================================== */
+
+@defaultColor: #333;
+@secondColor: #222;
+
+@borderLight: #444;
+@borderDark: #000;
+
+
+
+/* ==|== Mixins =================================================================================
+	CamelCase with capitalized first letter for all mixin names
+   ============================================================================================== */
+
+.BoxShadow (@BsHor, @BsVer, @BsSpr, @BsCol) {
+	   -moz-box-shadow: @BsHor @BsVer @BsSpr @BsCol;
+	-webkit-box-shadow: @BsHor @BsVer @BsSpr @BsCol;
+	        box-shadow: @BsHor @BsVer @BsSpr @BsCol;
+}
+
+.BoxShadowInset	(@BsiHor, @BsiVer, @BsiSpr, @BsiCol) {
+	   -moz-box-shadow: inset @BsiHor @BsiVer @BsiSpr @BsiCol;
+	-webkit-box-shadow: inset @BsiHor @BsiVer @BsiSpr @BsiCol;
+	        box-shadow: inset @BsiHor @BsiVer @BsiSpr @BsiCol;
+}
+
+.BorderRadius (@borderRadiusTL, @borderRadiusTR, @borderRadiusBR, @borderRadiusBL) {
+	   -moz-border-radius: @borderRadiusTL @borderRadiusTR @borderRadiusBR @borderRadiusBL;
+	-webkit-border-radius: @borderRadiusTL @borderRadiusTR @borderRadiusBR @borderRadiusBL;
+	        border-radius: @borderRadiusTL @borderRadiusTR @borderRadiusBR @borderRadiusBL;
+}
+
+.Gradient (@GradDir, @GradFirstCol, @GradFirstProc, @GradSecColor, @GradSecProc) {
+	background-image:  -webkit-gradient(linear, left top, left bottom, color-stop(@GradFirstProc, @GradFirstCol), color-stop(@GradSecProc, @GradSecColor));
+	background: -webkit-linear-gradient(@GradDir, @GradFirstCol @GradFirstProc, @GradSecColor @GradSecProc);
+	background:    -moz-linear-gradient(@GradDir, @GradFirstCol @GradFirstProc, @GradSecColor @GradSecProc);
+	background:      -o-linear-gradient(@GradDir, @GradFirstCol @GradFirstProc, @GradSecColor @GradSecProc);
+	background:     -ms-linear-gradient(@GradDir, @GradFirstCol @GradFirstProc, @GradSecColor @GradSecProc);
+	background:         linear-gradient(@GradDir, @GradFirstCol @GradFirstProc, @GradSecColor @GradSecProc);
+}
+
+
+
+/* ==|== Fonts ==================================================================================
+	The main font style.
+   ============================================================================================== */
+
+@textColor: #ff9933;
+@linkColor: #000;
+@defaultFont: 'Helvetica', 'Arial', 'Helvetica Neue', 'Nimbus Sans L', sans-serif;
+
+body {
+	color: @textColor;
+	font-family: @defaultFont;
+	font-size: 12px;
+	text-shadow: #000 1px 1px;
+}
+
+
+
+/* ==|== Body ===================================================================================
+	The main structure of the site.
+   ============================================================================================== */
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	background: @defaultColor;
+}
+
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+#container {
+	height: 100%;
+	padding-bottom: 100px;
+}
+
+
+
+/* ==|== Header =================================================================================
+	The site header with logo.
+   ============================================================================================== */
+
+header {
+	height: 100px;
+	width: 100%;
+}
+
+
+
+/* ==|== Nav ====================================================================================
+	The navigation with links.
+   ============================================================================================== */
+
+
+
+/* ==|== Sidebars ================================================================================
+	The sidebars.
+   ============================================================================================== */
+
+#sidebar-left {
+	width: 250px;
+	background: #222;
+	float: left;
+	overflow: hidden;
+	border-right: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+
+
+/* ==|== Content ================================================================================
+	The content area. The place where all the good stuff is put.
+   ============================================================================================== */
+
+#content {
+	overflow: inherit;
+	overflow: hidden;
+	border-left: solid 1px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* ==|== Footer =================================================================================
+	The footer of the page with disclaimers and stuff.
+   ============================================================================================== */
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	background: #333;
+}
