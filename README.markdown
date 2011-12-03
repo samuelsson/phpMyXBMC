@@ -4,5 +4,5 @@ This is an early version of a website GUI for viewing stats and media about your
 ## ToDo ##
 Everything ;)
 
-Especially:
+Especially:  
 > The DB connection
