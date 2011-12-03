@@ -1,5 +1,2 @@
-<div id="sidebar-right">
-	
-		
-	
+<div id="sidebar-right">	
 </div>
