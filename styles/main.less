@@ -12,8 +12,10 @@
 @defaultColor: #333;
 @secondColor: #222;
 
-@borderLight: #444;
-@borderDark: #000;
+@headerColor: #ffff66;
+@textColor: #eee;
+@linkColor: #000;
+@defaultFont: 'Helvetica', 'Arial', 'Helvetica Neue', 'Nimbus Sans L', sans-serif;
 
 
 
@@ -54,15 +56,20 @@
 	The main font style.
    ============================================================================================== */
 
-@textColor: #ff9933;
-@linkColor: #000;
-@defaultFont: 'Helvetica', 'Arial', 'Helvetica Neue', 'Nimbus Sans L', sans-serif;
-
 body {
 	color: @textColor;
 	font-family: @defaultFont;
 	font-size: 12px;
 	text-shadow: #000 1px 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: @headerColor;
 }
 
 
@@ -85,7 +92,8 @@ body {
 
 #container {
 	height: 100%;
-	padding-bottom: 100px;
+	min-width: 960px;
+	padding-bottom: 101px;
 }
 
 
@@ -97,6 +105,13 @@ body {
 header {
 	height: 100px;
 	width: 100%;
+	border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+}
+
+#logo {
+	height: 100px;
+	width: 450px;
+	background: url(../img/logo.png) top left no-repeat;
 }
 
 
@@ -112,11 +127,27 @@ header {
    ============================================================================================== */
 
 #sidebar-left {
-	width: 250px;
+	width: 210px;
 	background: #222;
 	float: left;
 	overflow: hidden;
-	border-right: solid 1px rgba(255, 255, 255, 0.1);
+	padding: 20px;
+	
+	border-right: solid 1px rgba(0, 0, 0, 0.3);
+	border-top: solid 1px rgba(255, 255, 255, 0.1);
+	border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+}
+
+#sidebar-right {
+	width: 210px;
+	background: #222;
+	float: right;
+	overflow: hidden;
+	padding: 20px;
+	
+	border-left: solid 1px rgba(0, 0, 0, 0.3);
+	border-top: solid 1px rgba(255, 255, 255, 0.1);
+	border-bottom: solid 1px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -126,9 +157,13 @@ header {
    ============================================================================================== */
 
 #content {
-	overflow: inherit;
 	overflow: hidden;
-	border-left: solid 1px rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	
+	border-left: solid 1px rgba(255, 255, 255, 0.1);
+	border-right: solid 1px rgba(255, 255, 255, 0.1);
+	border-top: solid 1px rgba(255, 255, 255, 0.1);
+	border-bottom: solid 1px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -143,4 +178,6 @@ footer {
 	width: 100%;
 	height: 100px;
 	background: #333;
+	border-top: solid 1px rgba(255, 255, 255, 0.1);
+	margin-top: 100px;
 }

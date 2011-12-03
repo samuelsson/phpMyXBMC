@@ -15,10 +15,13 @@
 <div id="wrapper">
 
 	<header>
+		<div id="logo">
+		</div>
 	</header>
 
 	<div id="container">
 
 		<?php get_sidebarleft(); ?>
+		<?php get_sidebarright(); ?>
 
 		<div id="content">
