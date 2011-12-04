@@ -11,19 +11,19 @@ $(window).load( function() {
 	
 	if ( 
 		($("#container").height() - 2 ) < ( $("body").height() - ($("header").height() + $("footer").height()) )
-		// The number after the container height is for compenating the border on header and footer
+		// The number after the container height is for compensating the border of header and footer
 		) {
+		$("#sidebar-left").height( $("body").height() - ( $("header").height() + $("footer").height() ) - 24 );
+		$("#sidebar-right").height( $("body").height() - ( $("header").height() + $("footer").height() ) - 24 );
 		$("#content").height( $("body").height() - ( $("header").height() + $("footer").height() ) - 44 );
-		$("#sidebar-left").height( $("body").height() - ( $("header").height() + $("footer").height() ) - 44 );
-		$("#sidebar-right").height( $("body").height() - ( $("header").height() + $("footer").height() ) - 44 );
 		// The number after the operator is for padding (both top and bottom) and for borders
 	}
 	
 	else  {
-		$("#sidebar-left").height( $("#container").height() - 42 );
+		$("#sidebar-left").height( $("#container").height() - 22 );
+		$("#sidebar-right").height( $("#container").height() - 22 );
 		$("#content").height( $("#container").height() - 42 );
-		$("#sidebar-right").height( $("#container").height() - 42 );
-		// The number after the operator is for compenasating for padding (both top and bottom) and for borders on header and footer
+		// The number after the operator is for compensating for padding (both top and bottom) and for borders of header and footer
 	}
 	
 });
