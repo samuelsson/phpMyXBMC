@@ -3,7 +3,7 @@
 	get_header();
 ?>
 
-<h1>All movies from <?php echo $_GET['year']; ?></h1>
+<h1>All movies</h1>
 
 <?php
 	
@@ -11,14 +11,11 @@
 	$statement = '
 		SELECT *
 		FROM movie
-		WHERE c07 = :year
 		ORDER BY c00 ASC
 	';
 	
 	// The array containing the prepareds included in the database query above.
-	$data = array(
-		'year' => $_GET['year']
-	);
+	$data = null;
 
 	// The function that makes it all happen. Takes database name, $statement and $data, runs it in the database and returns a result.
 	$STH = db_handle(DB_NAME_VIDEO, $statement, $data);

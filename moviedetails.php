@@ -3,26 +3,26 @@
 	get_header();
 ?>
 
-<h1>All movies from <?php echo $_GET['year']; ?></h1>
-
 <?php
 	
 	$statement = '
 		SELECT *
 		FROM movie
-		WHERE c07 = :year
+		WHERE idFile = :id
 		ORDER BY c00 ASC
 	';
 	
 	$data = array(
-		'year' => $_GET['year']
+		'id' => $_GET['id']
 	);
 
 	$STH = db_handle(DB_NAME_VIDEO, $statement, $data);
 	$result = $STH->fetchAll();
-
+	
 	foreach($result as $row) {
-	    echo $row['c00'] . '<br />';
+		// Gets the title of the movie and displays as H1
+	    echo "<h1>" . $row['c00'] . '</h1>';
+	    echo "<h3>" . $row['c09'] . '</h3>';
 	}
 
 ?>
