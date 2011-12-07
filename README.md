@@ -20,3 +20,6 @@ So if you are using Internet Explorer this won't work (and even if it would work
 ## Special thanks to  
 > ccMatrix  
 > [Studio movie and network logos](https://github.com/ccMatrix/StudioLogos)  
+
+## Worth pointing out  
+* Every time (if) an error occurs it will be printed to log/PDOErrors.log which is pretty handy when something goes wrong and you want to find out why. This is very unsecure so if you're using this application on a live page you'd like to remove the function in functions.php. It's in the function db\_handle and named file\_put\_contents().

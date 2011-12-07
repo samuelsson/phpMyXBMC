@@ -40,7 +40,7 @@
 	All database related.
    ============================================================================================== */
 
-	function db_handle($array, $statement) {
+	function db_handle($statement, $array) {
 		try {
 			$DBH = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME_VIDEO, DB_USER, DB_PASS);
 			$DBH->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, 1);
@@ -52,6 +52,7 @@
 
 		catch(PDOException $e) {  
 		    $STH = null;
+		    // This creates an error log file (if not exists) and prints the error message in it. Pretty unsecure ;)
 		    file_put_contents('log/PDOErrors.log', $e->getMessage(), FILE_APPEND); 
 		}  
 
