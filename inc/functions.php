@@ -13,36 +13,37 @@
 
 	//	Header
 	function get_header() {
-		include('inc/header.php');
+		include('header.php');
 	}
 	
 	// Sidebar Left
 	function get_sidebarleft() {
-		include('inc/sidebar-left.php');
+		include('sidebar-left.php');
 	}
 	
 	// Sidebar Right
 	function get_sidebarright() {
-		include('inc/sidebar-right.php');
+		include('sidebar-right.php');
 	}
 
 	//	Navigation
 	function get_navigation() {
-		include('inc/navigation.php');
+		include('navigation.php');
 	}
 
 	//	Footer
 	function get_footer() {
-		include('inc/footer.php');
+		include('footer.php');
 	}
 
 /* ==|== Database ===============================================================================
 	All database related.
    ============================================================================================== */
-
-	function db_handle($statement, $array) {
+	
+	// The function for the database connection and quering/execute.
+	function db_handle($database, $statement, $array) {
 		try {
-			$DBH = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME_VIDEO, DB_USER, DB_PASS);
+			$DBH = new PDO("mysql:host=".DB_HOST.";dbname=$database", DB_USER, DB_PASS);
 			$DBH->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, 1);
 			$DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			
@@ -52,8 +53,9 @@
 
 		catch(PDOException $e) {  
 		    $STH = null;
-		    // This creates an error log file (if not exists) and prints the error message in it. Pretty unsecure ;)
-		    file_put_contents('log/PDOErrors.log', $e->getMessage(), FILE_APPEND); 
+		    // This creates an error log file (if not exists) and prints the error message in it. 
+		    // Pretty unsecure ;)
+		    file_put_contents('../log/PDOErrors.log', $e->getMessage(), FILE_APPEND); 
 		}  
 
 		return $STH;

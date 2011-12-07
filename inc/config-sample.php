@@ -10,7 +10,7 @@
  *	Keep this file secure becuase passwords are kept in plain text!
  *	Preferably you should edit your .htaccess or keep this file outside the root folder.
  *
- *	RENAME THIS FILE TO config.php WHEN DONE EDITING, SAVE IN THE SAME LOCATION ( / ).
+ *	RENAME THIS FILE TO config.php WHEN DONE EDITING, SAVE IN THE SAME LOCATION ( /inc ).
  */
 
 /* ==|== Database ===============================================================================
@@ -41,6 +41,6 @@
 	define('TTVDB_API', '');
 		
 	// Choose your language
-	include('language/eng.php');
+	include('../language/eng.php');
 
 ?>
