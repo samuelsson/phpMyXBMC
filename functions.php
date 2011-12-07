@@ -40,4 +40,22 @@
 	All database related.
    ============================================================================================== */
 
+	function db_handle($array, $statement) {
+		try {
+			$DBH = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME_VIDEO, DB_USER, DB_PASS);
+			$DBH->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, 1);
+			$DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			
+			$STH = $DBH->prepare($statement);
+			$STH->execute($array);
+		}
+
+		catch(PDOException $e) {  
+		    $STH = null;
+		    file_put_contents('log/PDOErrors.log', $e->getMessage(), FILE_APPEND); 
+		}  
+
+		return $STH;
+	}
+
 ?>

@@ -3,30 +3,33 @@
 	get_header();
 ?>
 
+<h1>All movies from <?php echo $_GET['year']; ?></h1>
 
 <?php
+	
+	// The statement that should bed queried 
+	$statement = '
+		SELECT *
+		FROM movie
+		WHERE c07 = :year
+		ORDER BY c00 ASC
+	';
+	
+	// The array containing the words included in the database query above
+	$data = array(
+		'year' => $_GET['year']
+	);
 
-$year = "1999";
+	// The function that makes it all happen. Takes $statement and $data, runs it in the database and returns a result.
+	$STH = db_handle($data, $statement);
+	
+	// Fetches data and saves in the variable result.
+	$result = $STH->fetchAll();
 
-$dbh = new PDO('mysql:host='.DB_HOST.'; dbname='.DB_NAME_VIDEO, DB_USER, DB_PASS);
-$dbh->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, 1);
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-
-$stmt = $dbh->prepare('SELECT * FROM movie WHERE c07 = :year ORDER BY c00 ASC');
-$stmt->execute( array(
-					'year' => "$year"
-				) );
-
-$result = $stmt->fetchAll();
-?>
-
-<h1>All movies from <?php echo $year; ?></h1>
-
-<?php
-foreach($result as $row)
-{
-    echo $row['c00'] . '<br />';
-}
+	// Loops all the 
+	foreach($result as $row) {
+	    echo $row['c00'] . '<br />';
+	}
 
 ?>
 

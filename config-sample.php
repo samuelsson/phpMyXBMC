@@ -33,7 +33,13 @@
 /* ==|== Misc ===================================================================================
 	Misc stuff
    ============================================================================================== */
+	
+	//The Movie Database API
+	define('TMDB_API', '');
 
+	//The TV Database API
+	define('TTVDB_API', '');
+		
 	// Choose your language
 	include('language/eng.php');
 
