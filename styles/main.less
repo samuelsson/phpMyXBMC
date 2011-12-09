@@ -61,7 +61,7 @@ body {
 	color: @textColor;
 	font-family: @defaultFont;
 	font-size: 12px;
-	text-shadow: #eee 1px 1px;
+	text-shadow: #fff 0 1px;
 }
 
 h1,
@@ -155,6 +155,7 @@ nav {
 	width: 200px;
 	float: right;
 	overflow: hidden;
+	background: rgba(255, 255, 255, .2);
 	
 	border-top: solid 1px rgba(255, 255, 255, 0);
 	border-bottom: solid 1px rgba(0, 0, 0, 0);
@@ -192,6 +193,18 @@ nav {
 	
 	border-top: solid 1px rgba(255, 255, 255, 0);
 	border-bottom: solid 1px rgba(0, 0, 0, 0);
+}
+
+.divider-large {
+	width: 100%;
+	height: 5px;
+	background: rgba(0, 0, 0, .5);
+}
+
+.divider-small {
+	width: 100%;
+	height: 2px;
+	background: rgba(0, 0, 0, .4);
 }
 
 

@@ -18,13 +18,19 @@
    ============================================================================================== */
 
 	// The server IP to your database:
-	define('DB_HOST', '');
+	define('DB_HOST', 'localhost');
 	
 	//	The name of the database:
-	define('DB_NAME', '');
+	define('DB_NAME_SITE', 'xbmc_site');
+	
+	//	The name of the database:
+	define('DB_NAME_VIDEO', 'xbmc_video');
+	
+	//	The name of the database:
+	define('DB_NAME_MUSIC', 'xbmc_music');
 	
 	// The username of the user who should access the database:
-	define('DB_USER', '');
+	define('DB_USER', 'xbmc');
 	
 	// The password for the user:
 	define('DB_PASS', '');
