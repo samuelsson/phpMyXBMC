@@ -61,7 +61,7 @@ body {
 	color: @textColor;
 	font-family: @defaultFont;
 	font-size: 12px;
-	text-shadow: #fff 0 -1px;
+	text-shadow: #eee 1px 1px;
 }
 
 h1,
@@ -92,7 +92,7 @@ body {
 }
 
 #wrapper {
-	width: 85%;
+	width: 100%;
 	margin: 0 auto;
 	min-height: 100%;
 	position: relative;
@@ -152,7 +152,7 @@ nav {
 }
 
 #sidebar-right {
-	width: 0;
+	width: 200px;
 	float: right;
 	overflow: hidden;
 	
@@ -163,17 +163,23 @@ nav {
 .sidebar-content {
 	width: @sidebarWidth - 30px;
 	padding: 15px;
-	
-	.progressbar {
-		width: @sidebarWidth - 32px;
-		height: 20px;
-		background: rgba(0, 0, 0, 0.3);
-		border: 1px solid #111;
-	
-		.BorderRadius (2px, 2px, 2px, 2px);
-	}
 }
 
+.progressbar {
+	width: @sidebarWidth - 32px;
+	height: 15px;
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid #111;
+
+	.BorderRadius (3px, 3px, 3px, 3px);
+}
+
+.progress {
+	height: 15px;
+	background: #fff;
+	border-right: 1px solid #000;
+	.BorderRadius (2px, 0, 0, 2px);
+}
 
 
 /* ==|== Content ================================================================================

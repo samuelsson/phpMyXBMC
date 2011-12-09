@@ -9,3 +9,10 @@
 
 </body>
 </html>
+
+<?php
+	// This closes the database connection, if any was open
+	if (isset($DBH)) {
+		$DBH = null;
+	}
+?>
