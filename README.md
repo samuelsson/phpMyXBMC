@@ -23,6 +23,3 @@ So if you are using Internet Explorer this won't work (and even if it would work
 
 > glamorous  
 > [PHP Class for using TMDB API](https://github.com/glamorous/TMDb-PHP-API)  
-
-## Worth pointing out  
-* Every time (if) an error occurs it will be printed to log/PDOErrors.log which comes in handy when something goes wrong and you want to find out why. This is very unsecure so if you're using this application on a live page you'd like to remove the function in functions.php. It's in the function db\_handle and named file\_put\_contents().
