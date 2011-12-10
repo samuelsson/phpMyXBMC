@@ -2,7 +2,7 @@
 This is an early version of a website GUI for viewing movies/shows and stats about your XBMC library when exported to MySQL.  
 
 This will only work with newer browsers with support for the latest versions of CSS and HTML. 
-So if you are using Internet Explorer this won't work (and even if it would work you shouldn't use IEr anyway).
+So if you are using Internet Explorer this won't work (and even if it would work you shouldn't use IE anyway).
 
 ## Languages and stuff used  
 > PHP with PDO  
@@ -13,12 +13,14 @@ So if you are using Internet Explorer this won't work (and even if it would work
 > jQuery  
 
 ## ToDo  
-* The DB connection  
-* Everything else ;)  
+* Finish the design (mostly CSS)  
+* Improve queries for better performance  
+* Make the PHP OO  
+* Code clean up  
 
 ## Special thanks to  
 > ccMatrix  
-> [Studio movie and network logos](https://github.com/ccMatrix/StudioLogos)  
+> [Movie studio and network logos](https://github.com/ccMatrix/StudioLogos)  
 
 > glamorous  
 > [PHP Class for using TMDB API](https://github.com/glamorous/TMDb-PHP-API)  
