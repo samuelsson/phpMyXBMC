@@ -34,6 +34,20 @@
 	}
 ?>
 
+<div class="divider-large"></div>
+
+<div id="movie-plot">
+
+	<div class="divider-medium"></div>
+	<?php
+		foreach($result as $row) {
+			// Gets the title of the movie and displays as H1
+			echo $row['c01'];
+		}
+	?>
+	<div class="divider-medium"></div>
+	
+</div>
 
 <?php
 	get_footer();

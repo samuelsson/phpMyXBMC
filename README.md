@@ -5,13 +5,12 @@ This will only work with newer browsers with support for the latest versions of 
 So if you are using Internet Explorer this won't work (and even if it would work you shouldn't use IEr anyway).
 
 ## Languages and stuff used  
-> PHP  
-> HTML (version 4 and 5)  
+> PHP with PDO  
+> HTML5  
 > CSS3  
 > LESS CSS  
-> PDO MySQL  
+> MySQL  
 > jQuery  
-> Normalize CSS from HTML5 Boilerplate  
 
 ## ToDo  
 * The DB connection  
@@ -23,3 +22,6 @@ So if you are using Internet Explorer this won't work (and even if it would work
 
 > glamorous  
 > [PHP Class for using TMDB API](https://github.com/glamorous/TMDb-PHP-API)  
+
+> necolas  
+> [Normalize.css for better browser rendering](https://github.com/necolas/normalize.css/)  

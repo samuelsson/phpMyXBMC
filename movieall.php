@@ -4,6 +4,7 @@
 ?>
 
 <h1>All movies</h1>
+<div class="divider-large"></div>
 
 <?php
 
