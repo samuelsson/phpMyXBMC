@@ -13,10 +13,12 @@ So if you are using Internet Explorer this won't work (and even if it would work
 > jQuery  
 
 ## ToDo  
+* ~~Fix the PDO Database connection~~  
 * Finish the design (mostly CSS)  
 * Improve queries for better performance  
-* Make the PHP OO  
+* Make the PHP object oriented  
 * Code clean up  
+* Fix sessions/cookies (probably more focused on sessions)  
 
 ## Special thanks to  
 > ccMatrix  
