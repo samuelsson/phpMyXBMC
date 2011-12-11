@@ -1,8 +1,8 @@
 # phpMyXBMC  
-This is an early version of a website GUI for viewing movies/shows and stats about your XBMC library when exported to MySQL.  
+This is an early version of a web application for viewing movies/shows and stats about your XBMC library when exported to MySQL.  
 
-This will only work with newer browsers with support for the latest versions of CSS and HTML. 
-So if you are using Internet Explorer this won't work (and even if it would work you shouldn't use IE anyway).
+This will only work with newer browsers with support for the latest versions of CSS and HTML.
+So if you are using Internet Explorer this won't work (and even if it would work you shouldn't use IE anyway).  
 
 ## Languages and stuff used  
 > PHP with PDO  
@@ -14,11 +14,13 @@ So if you are using Internet Explorer this won't work (and even if it would work
 
 ## ToDo  
 * ~~Fix the PDO Database connection~~  
+* Create a navigation bar  
 * Finish the design (mostly CSS)  
 * Improve queries for better performance  
 * Make the PHP object oriented  
 * Code clean up  
 * Fix sessions/cookies (probably more focused on sessions)  
+* Don't load all movies/shows on the same page  
 
 ## Special thanks to  
 > ccMatrix  
@@ -29,3 +31,6 @@ So if you are using Internet Explorer this won't work (and even if it would work
 
 > necolas  
 > [Normalize.css for better browser rendering](https://github.com/necolas/normalize.css/)  
+
+> Joseph Wain  
+> [Glyphish Icons](http://www.glyphish.com/)  

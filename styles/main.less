@@ -127,13 +127,18 @@ body {
    ============================================================================================== */
 
 header {
-	height: 0px;
 	width: 100%;
+	overflow: hidden;
+	background: url(img/bg/darknoise.png), url(img/bg/darknoise.png); // Worst f*king code ever :D Will have to do for now
+	background-repeat: repeat-y, repeat-y;
+	background-position: 100px, 0;
 }
 
 #logo {
-	height: 80px;
-	width: 450px;
+	height: 60px;
+	width: @sidebarWidth;
+	float: left;
+	overflow: hidden;
 }
 
 
@@ -143,7 +148,29 @@ header {
    ============================================================================================== */
 
 nav {
+	overflow: hidden;
+
+	ul {
+		clear: both;
+
+		li {
+			margin: 0 40px 0 0;
+			float: left;
+			font-size: 18px;
+			overflow: hidden;
+
+			&:hover {
+				border-bottom: 5px solid rgba(0, 0, 0, .7);
+			}
+
+			img {
+				padding: 5px 5px 0 0;
+				height: 22px;
+			}
+		}
+	}
 }
+
 
 
 /* ==|== Sidebars ===============================================================================
