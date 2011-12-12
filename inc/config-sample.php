@@ -45,8 +45,5 @@
 
 	//The TV Database API
 	define('TTVDB_API', '');
-		
-	// Choose your language
-	include('../language/eng.php');
 
 ?>

@@ -3,7 +3,7 @@
 	get_header();
 ?>
 
-<h1>Hi Erik! You have watched movies for a total of</h1>
+<h1>You have wasted [...] of you life watching movies and TV shows!</h1>
 <div class="divider-large"></div>
 
 <?php
