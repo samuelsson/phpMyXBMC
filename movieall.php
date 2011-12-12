@@ -6,7 +6,7 @@
 <h1>All movies</h1>
 <div class="divider-large"></div>
 <div class="movieall-charchooser">
-	<a href="movieall.php?movie=nr">#</a>
+	<a href="movieall.php?movie=nr">#</a>	<!-- All these will be added to the database later and displayed with a loop -->
 	<a href="movieall.php?movie=a">A</a>
 	<a href="movieall.php?movie=b">B</a>
 	<a href="movieall.php?movie=c">C</a>
@@ -40,7 +40,7 @@
 
 	if ($_GET['movie'] != null) {
 
-		if ($_GET['movie'] == 'nr') {
+		if ($_GET['movie'] == 'nr') { // All these will be added to the database later and displayed with a loop
 			$sql = "
 				SELECT * 
 				FROM movie
