@@ -7,7 +7,7 @@
 	<script src="js/less-1.1.5.min.js" type="text/javascript"></script>
 	<script src="js/jquery-1.7.min.js" type="text/javascript"></script>
 	<script src="js/scripts.js" type="text/javascript"></script>
-	
+
 	<title>phpMyXBMC</title>
 </head>
 <body>

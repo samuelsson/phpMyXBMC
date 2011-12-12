@@ -14,13 +14,14 @@
 <?php
 		$DBH = db_handle(DB_NAME_VIDEO);
 
-		$STH = $DBH->prepare('
+		$sql = '
 			SELECT * 
 			FROM movie 
 			WHERE idFile = :id 
 			ORDER BY c00 ASC
-		');
+		';
 
+		$STH = $DBH->prepare($sql);
 		$STH->execute( array(
 			'id' => $_GET['id']
 		));

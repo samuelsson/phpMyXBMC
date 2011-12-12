@@ -12,16 +12,6 @@ So if you are using Internet Explorer this won't work (and even if it would work
 > MySQL  
 > jQuery  
 
-## ToDo  
-* ~~Fix the PDO Database connection~~  
-* Create a navigation bar  
-* Finish the design (mostly CSS)  
-* Improve queries for better performance  
-* Make the PHP object oriented  
-* Code clean up  
-* Fix sessions/cookies (probably more focused on sessions)  
-* Don't load all movies/shows on the same page  
-
 ## Special thanks to  
 > ccMatrix  
 > [Movie studio and network logos](https://github.com/ccMatrix/StudioLogos)  
@@ -34,3 +24,13 @@ So if you are using Internet Explorer this won't work (and even if it would work
 
 > Joseph Wain  
 > [Glyphish Icons](http://www.glyphish.com/)  
+
+## ToDo  
+* ~~Fix the PDO Database connection~~  
+* ~~Create a navigation bar~~  
+* Finish the design (mostly CSS)  
+* Improve queries for better performance  
+* Make the PHP object oriented  
+* Code clean up  
+* Fix sessions/cookies (probably more focused on sessions)  
+* ~~Don't load all movies/shows on the same page~~  
