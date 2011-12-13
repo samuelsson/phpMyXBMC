@@ -42,10 +42,16 @@
 	
 	// The function for the database connection and quering/execute.
 	function db_handle($database) {
-		$DBH = new PDO("mysql:host=".DB_HOST.";dbname=$database", DB_USER, DB_PASS);
-		$DBH->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, 1);
-		$DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-		return $DBH;
+		try {
+			$DBH = new PDO("mysql:host=".DB_HOST.";dbname=$database", DB_USER, DB_PASS);
+			$DBH->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, 1);
+			$DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+			return $DBH;
+		}
+		catch (PDOException $e) {
+			print "Error!: " . $e->getMessage() . "<br/>";
+			die();
+		}
 	}
 
 ?>

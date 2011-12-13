@@ -83,7 +83,7 @@ h1 { font-size: @headerOneSize; }
 h2 { font-size: @headerOneSize - 6; }
 h3 { font-size: @headerOneSize - 12; }
 h4 { font-size: @headerOneSize - 18; }
-h5 { font-size: @headerOneSize - 24; }
+h5 { font-size: @headerOneSize - 28; }
 h6 { font-size: @headerOneSize - 32; }
 
 a,
@@ -236,7 +236,7 @@ nav {
 /*	Moviedetails specific
  * =============================================== */
 #movie-plot {
-	width: 45%;
+	width: 70%;
 	overflow: hidden;
 	float: right;
 	text-align: left;
@@ -256,14 +256,18 @@ nav {
 .coverframe {
 	display: block;
 	float: left;
-	width: 185px;
+	width: 160px;
 	margin: 0 20px 20px 20px;
 }
 
+// Image reflection for webkit browsers
 .coverframe-picture {
-	background: #555;
-	height: 278px;
-	width: 185px;
+
+	img {
+		width: 160px;
+		height: auto;
+		-webkit-box-reflect: below 1px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.8, transparent), to(rgba(255, 255, 255, 0.25)));
+	}
 }
 
 .coverframe-text {

@@ -30,7 +30,7 @@
 
 		foreach($result as $row) {
 			// Gets the title of the movie and displays as H1
-			echo "<h1>" . $row['c00'] . '</h1>';
+			echo "<h1>" . $row['c00'] . '</h1><h5>' . $row['c03'] . '</h5>';
 		}
 	}
 ?>
@@ -42,7 +42,7 @@
 	<div class="divider-medium"></div>
 	<?php
 		foreach($result as $row) {
-			// Gets the title of the movie and displays as H1
+			// Gets the plot of the movie
 			echo $row['c01'];
 		}
 	?>

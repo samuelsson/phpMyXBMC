@@ -3,31 +3,6 @@
  */
 
 
-/* ==|== Container Height =======================================================================
-	This scripts makes content, sidebar-left and sidebar-right always the same height.
-   ============================================================================================== */
-
-$(window).load( function() {  			
-	
-	if ( 
-		$("#container").height() < ( $("body").height() - ($("header").height() + $("footer").height()) )
-		) {
-		$("#sidebar-left").height( $("body").height() - ( $("header").height() + $("footer").height() ));
-		$("#sidebar-right").height( $("body").height() - ( $("header").height() + $("footer").height() ));
-		$("#content").height( $("body").height() - ( $("header").height() + $("footer").height() ) - 40 );
-		// The number after the operator is for padding (both top and bottom) and for borders
-	}
-	
-	else  {
-		$("#sidebar-left").height( $("#container").height() );
-		$("#sidebar-right").height( $("#container").height() );
-		$("#content").height( $("#container").height() - 40 );
-		// The number after the operator is for compensating for padding (both top and bottom) and for borders of header and footer
-	}
-	
-});
-
-
 
 /* ==|== Equal Height Blocks in Rows ============================================================
 	 by: Chris Coyier - http://css-tricks.com/8401-equal-height-blocks-in-rows/
@@ -86,13 +61,56 @@ function columnConform() {
 }
 
 
+
+/* ==|== Container Height =======================================================================
+	This scripts makes content, sidebar-left and sidebar-right always the same height.
+   ============================================================================================== */
+
+function containerHeightOld() {
+	
+	if ( 
+		$("#container").height() < ( $("body").height() - ($("header").height() + $("footer").height()) )
+		) {
+		$("#sidebar-left").height( $("body").height() - ( $("header").height() + $("footer").height() ));
+		$("#sidebar-right").height( $("body").height() - ( $("header").height() + $("footer").height() ));
+		$("#content").height( $("body").height() - ( $("header").height() + $("footer").height() ) - 40 );
+		// The number after the operator is for padding (both top and bottom) and for borders
+	}
+	
+	else  {
+		$("#sidebar-left").height( $("#container").height() );
+		$("#sidebar-right").height( $("#container").height() );
+		$("#content").height( $("#container").height() - 40 );
+		// The number after the operator is for compensating for padding (both top and bottom) and for borders of header and footer
+	}	
+}
+
+function containerHeight() {
+
+	if ( 
+		$("#container").height() < ( $("body").height() - ($("header").height() + $("footer").height()) )
+		) {
+		$("#sidebar-left").height( $("body").height() - ( $("header").height() + $("footer").height() ));
+	}
+
+	else {
+		$("#sidebar-left").height( $("#content").height() + 40 )
+	}
+}
+
+
+
+/* ==|== Run functions ==========================================================================
+	
+   ============================================================================================== */
+
+
 $(window).resize(function() {
 	columnConform();
+	containerHeight();
 });
 
-// Dom Ready
-// You might also want to wait until window.onload if images are the things that
-// are unequalizing the blocks
-$(function() {
+$(window).load( function() {
 	columnConform();
+	containerHeight();
 });

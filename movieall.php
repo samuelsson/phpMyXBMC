@@ -6,7 +6,7 @@
 <h1>All movies</h1>
 <div class="divider-large"></div>
 <div class="movieall-charchooser">
-	<a href="movieall.php?movie=nr">#</a>	<!-- All these will be added to the database later and displayed with a loop -->
+	<a href="movieall.php?movie=0">#</a>	<!-- All these will be added to the database later and displayed with a loop -->
 	<a href="movieall.php?movie=a">A</a>
 	<a href="movieall.php?movie=b">B</a>
 	<a href="movieall.php?movie=c">C</a>
@@ -40,7 +40,7 @@
 
 	if ($_GET['movie'] != null) {
 
-		if ($_GET['movie'] == 'nr') { // All these will be added to the database later and displayed with a loop
+		if ($_GET['movie'] == '0') { // All these will be added to the database later and displayed with a loop
 			$sql = "
 				SELECT * 
 				FROM movie
@@ -99,11 +99,17 @@
 			foreach($result as $row) {
 				echo '
 					<div class="coverframe">
-						<a href="moviedetails.php?id=' . $row['idFile'] . '"><div class="coverframe-picture">
-						</div></a>
+						
+						<a href="moviedetails.php?id=' . $row['idFile'] . '">
+							<div class="coverframe-picture">
+								<img src="" />
+							</div>
+						</a>
+						
 						<div class="coverframe-text">
 							<a href="moviedetails.php?id=' . $row['idFile'] . '">' . $row['c00'] . '</a>
 						</div>
+
 					</div>
 				';
 			}
