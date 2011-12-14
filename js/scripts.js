@@ -66,51 +66,32 @@ function columnConform() {
 	This scripts makes content, sidebar-left and sidebar-right always the same height.
    ============================================================================================== */
 
-function containerHeightOld() {
-	
-	if ( 
-		$("#container").height() < ( $("body").height() - ($("header").height() + $("footer").height()) )
-		) {
-		$("#sidebar-left").height( $("body").height() - ( $("header").height() + $("footer").height() ));
-		$("#sidebar-right").height( $("body").height() - ( $("header").height() + $("footer").height() ));
-		$("#content").height( $("body").height() - ( $("header").height() + $("footer").height() ) - 40 );
-		// The number after the operator is for padding (both top and bottom) and for borders
-	}
-	
-	else  {
-		$("#sidebar-left").height( $("#container").height() );
-		$("#sidebar-right").height( $("#container").height() );
-		$("#content").height( $("#container").height() - 40 );
-		// The number after the operator is for compensating for padding (both top and bottom) and for borders of header and footer
-	}	
-}
-
 function containerHeight() {
 
-	if ( 
-		$("#container").height() < ( $("body").height() - ($("header").height() + $("footer").height()) )
-		) {
-		$("#sidebar-left").height( $("body").height() - ( $("header").height() + $("footer").height() ));
+	if (    $("#content").height() < ( $("#wrapper").height() - ($("header").height() + $("footer").height()) )    &&
+			$("#sidebar-left").height() < ( $("#wrapper").height() - ($("header").height() + $("footer").height()) ) 
+	){
+		$("#sidebar-left").height( $("#wrapper").height() - ( $("header").height() + $("footer").height() ));
 	}
 
 	else {
+		// The addition after the operator is for the border in content (20px top and 20px bottom).
 		$("#sidebar-left").height( $("#content").height() + 40 )
 	}
 }
 
 
 
-/* ==|== Run functions ==========================================================================
-	
+/* ==|== Call functions =========================================================================
+	These call the functions depending on the situation.
    ============================================================================================== */
 
-
-$(window).resize(function() {
+$(window).load( function() {
 	columnConform();
 	containerHeight();
 });
 
-$(window).load( function() {
+$(window).resize(function() {
 	columnConform();
 	containerHeight();
 });

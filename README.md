@@ -29,8 +29,11 @@ So if you are using Internet Explorer this won't work (and even if it would work
 * ~~Fix the PDO Database connection~~  
 * ~~Create a navigation bar~~  
 * Finish the design (mostly CSS)  
+* ~~Connect to TMDb with API for poster request~~  
+* Code a function where all TMBd images gets cached and loaded  
 * Improve queries for better performance  
 * Make the PHP object oriented  
 * Code clean up  
 * Fix sessions/cookies (probably more focused on sessions)  
 * ~~Don't load all movies/shows on the same page~~  
+* Fix the jQuery window resize bug when making a small window larger  
