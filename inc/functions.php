@@ -43,8 +43,9 @@
 	All database related.
    ============================================================================================== */
 	
-	// The function for the database connection and quering/execute.
-	function db_handle($database) {
+	// The function for the database connection and quering/execute. 
+	// Defaults to video database if nothing else is specified.
+	function db_handle($database = DB_NAME_VIDEO) {
 		try {
 			$DBH = new PDO("mysql:host=".DB_HOST.";dbname=$database", DB_USER, DB_PASS);
 			$DBH->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, 1);
