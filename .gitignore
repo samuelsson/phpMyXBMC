@@ -6,6 +6,8 @@
 config.php
 */temp
 *temp
+img/movieposters/*
+sftp-settings.json
 
 # Compiled source #
 ###################
@@ -29,6 +31,7 @@ config.php
 
 # Logs and databases #
 ######################
+/log
 *.log
 *.sql
 *.sqlite
