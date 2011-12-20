@@ -1,17 +1,17 @@
 <?php
+	// If no id is specified in the url bar -> redirect to movieall.php
 	if ($_GET['id'] == null) {
-		header("Location: index.php");
+		header("Location: movieall.php");
 		exit;
 	}
+
 	else {
-?>
 
-<?php
-	require_once('inc/functions.php');
-	get_header();
-?>
+		// Normal load of header and functions
+		require_once('inc/functions.php');
+		get_header();
 
-<?php
+		// The database connection and query of movie info
 		$DBH = db_handle(DB_NAME_VIDEO);
 
 		$sql = '
@@ -28,24 +28,29 @@
 
 		$result = $STH->fetchAll();
 
+		// Save all the important information in variables for use later in the HTML code
 		foreach($result as $row) {
-			// Gets the title of the movie and displays as H1
-			echo "<h1>" . $row['c00'] . '</h1><h5>' . $row['c03'] . '</h5>';
+			$movieTitle = $row['c00'];
+			$movieOutline = $row['c03'];
+			$moviePlot = $row['c01'];
+			$movieImdb = $row['c09'];
 		}
 	}
 ?>
 
+<h1><?php echo $movieTitle; ?></h1>
+<h5><?php echo $movieOutline; ?></h5>
+
 <div class="divider-large"></div>
 
-<div id="movie-plot">
+<div id="moviedetails-poster">
+	<img src="img/movieposters/<?php echo $movieImdb; ?>.jpg">
+</div>
+
+<div id="moviedetails-plot">
 
 	<div class="divider-medium"></div>
-	<?php
-		foreach($result as $row) {
-			// Gets the plot of the movie
-			echo $row['c01'];
-		}
-	?>
+	<?php echo $moviePlot; ?>
 	<div class="divider-medium"></div>
 	
 </div>

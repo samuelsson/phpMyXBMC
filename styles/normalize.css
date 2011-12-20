@@ -58,7 +58,7 @@ audio:not([controls]) {
 /*
  * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
  *    http://clagnut.com/blog/348/#c790
- * 2. Keeps page centred in all browsers regardless of content height
+ * 2. Keeps page centered in all browsers regardless of content height
  * 3. Prevents iOS text size adjust after orientation change, without disabling user zoom
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
@@ -119,7 +119,7 @@ a:active {
    ========================================================================== */
 
 /*
- * Neutralise smaller font-size in 'section' and 'article' in FF4+, Chrome, S5
+ * Neutralize smaller font-size in 'section' and 'article' in FF4+, Chrome, S5
  */
 
 h1 {

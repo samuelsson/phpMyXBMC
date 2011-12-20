@@ -5,7 +5,7 @@
 
 
 /* ==|== Equal Height Blocks in Rows ============================================================
-	 by: Chris Coyier - http://css-tricks.com/8401-equal-height-blocks-in-rows/
+	by: Chris Coyier - http://css-tricks.com/8401-equal-height-blocks-in-rows/
    ============================================================================================== */
 
 // these are (ruh-roh) globals. You could wrap in an
@@ -16,13 +16,13 @@ var currentTallest = 0,
 
 function setConformingHeight(el, newHeight) {
 	// set the height to something new, but remember the original height in case things change
-	el.data("originalHeight", (el.data("originalHeight") == undefined) ? (el.height()) : (el.data("originalHeight")));
+	el.data("originalHeight", (el.data("originalHeight") === undefined) ? (el.height()) : (el.data("originalHeight")));
 	el.height(newHeight);
 }
 
 function getOriginalHeight(el) {
 	// if the height has changed, send the originalHeight
-	return (el.data("originalHeight") == undefined) ? (el.height()) : (el.data("originalHeight"));
+	return (el.data("originalHeight") === undefined) ? (el.height()) : (el.data("originalHeight"));
 }
 
 function columnConform() {
@@ -69,14 +69,14 @@ function columnConform() {
 function containerHeight() {
 
 	if (    $("#content").height() < ( $("#wrapper").height() - ($("header").height() + $("footer").height()) )    &&
-			$("#sidebar-left").height() < ( $("#wrapper").height() - ($("header").height() + $("footer").height()) ) 
+			$("#sidebar-left").height() < ( $("#wrapper").height() - ($("header").height() + $("footer").height()) )
 	){
 		$("#sidebar-left").height( $("#wrapper").height() - ( $("header").height() + $("footer").height() ));
 	}
 
 	else {
 		// The addition after the operator is for the border in content (20px top and 20px bottom).
-		$("#sidebar-left").height( $("#content").height() + 40 )
+		$("#sidebar-left").height( $("#content").height() + 40 );
 	}
 }
 
@@ -88,10 +88,8 @@ function containerHeight() {
 
 $(window).load( function() {
 	columnConform();
-	containerHeight();
 });
 
 $(window).resize(function() {
 	columnConform();
-	containerHeight();
 });

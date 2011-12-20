@@ -25,18 +25,28 @@
 	$STH = $DBH->prepare($sql);
 	$STH->execute();
 	$movieTotal = $STH->fetchColumn();
+
+	$percent = "29";
 	
 ?>
 
 
 <div id="sidebar-left">
 	<div class="sidebar-content">
-		
-		<?php echo $movieWatched . '&nbsp;&nbsp;/&nbsp;&nbsp;' . $movieTotal; ?>
-		
-		<div class="progressbar">
-			<div class="progress" style="width:<?php echo "35"; ?>%">
+
+		<div id="progressbar-frame">
+			<div id="progressbar-bg">
+				<div id="progress" style="width:<?php echo $percent; ?>%">
+				</div>
+				<div id="progresspointer"><?php echo $percent; ?>%</div>
 			</div>
+		</div>
+		
+		<div id="progressbar-text-left">
+			<span>Movie Progress:</span>
+		</div>
+		<div id="progressbar-text-right">
+			<?php echo $movieWatched . '&nbsp;&nbsp;/&nbsp;&nbsp;' . $movieTotal; ?>
 		</div>
 	</div>
 </div>

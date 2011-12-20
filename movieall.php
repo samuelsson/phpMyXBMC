@@ -18,11 +18,12 @@
 	?>
 
 </div>
+
 <div class="divider-large"></div>
 
 <?php
 
-	// Checks if there is an char set in the url bar, otherwise do nothing
+	// Checks if there is a char set in the url bar, otherwise do nothing
 	if (isset($_GET['char'])) {
 		
 		$sel_char = $_GET['char'];
@@ -56,9 +57,7 @@
 		// The database connection
 		$DBH = db_handle();
 		$STH = $DBH->prepare($sql);
-		$STH->execute( array(
-			'char' => $sel_char
-		));
+		$STH->execute( array('char' => $sel_char) );
 
 		// Fetches the array of each movie and saves in another array.
 		// An array named $result containing an array for each movie.
@@ -71,14 +70,14 @@
 			echo '
 				<div class="coverframe">
 					
-					<a href="moviedetails.php?id=' . $result[$i]['idFile'] . '">
+					<a href="moviedetails.php?id=' . $result[$i]["idFile"] . '">
 						<div class="coverframe-picture">
 							<img src="img/movieposters/' . $result[$i]["c09"] . '.jpg" />
 						</div>
 					</a>
 					
 					<div class="coverframe-text">
-						<a href="moviedetails.php?id=' . $result[$i]['idFile'] . '">' . $result[$i]['c00'] . '</a>
+						<a href="moviedetails.php?id=' . $result[$i]["idFile"] . '">' . $result[$i]['c00'] . '</a>
 					</div>
 
 				</div>

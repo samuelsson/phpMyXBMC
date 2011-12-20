@@ -1,6 +1,6 @@
 		<nav>
 			<ul>
-				<a href="http://localhost:7777/phpmyxbmc/index.php"><li>
+				<a href="index.php"><li>
 					<img src="img/icon/home.png" />Home
 				</li></a>
 				<a href="movieall.php"><li>

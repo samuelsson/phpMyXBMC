@@ -45,11 +45,11 @@
 	The main font style.
    ============================================================================================== */
 
-@textColor: #333;			// The default text color for the main area of the page (content).
-@headerColor: #555;			// A special color for h1-h6 styles.
+@textColor: #ddd;			// The default text color for the main area of the page (content).
+@headerColor: #eee;			// A special color for h1-h6 styles.
 @linkColor: #000;			// Colors of the links.
 @highlightColor: #9966cc;	// Highlighted color, aka the second color. A color that stands out from the other ones.
-@textColorLight: #ddd;		// A light color for dark backgrounds, the sidebar for example.
+@textColorDark: #333;		// A light color for dark backgrounds, the sidebar for example.
 
 @headerOneSize: 48px;		// Font size of the first header, easier to decide all the other headers this way.
 
@@ -60,7 +60,7 @@ body {
 	color: @textColor;
 	font-family: @defaultFont;
 	font-size: 16px;
-	text-shadow: #ddd 0 1px;
+	text-shadow: #000 0 -1px;
 }
 
 .sidebar-content {
@@ -103,7 +103,7 @@ html,
 body {
 	height: 100%;
 	width: 100%;
-	background: #3b3b3b url(img/bg/lightnoise.png) repeat;
+	background: #3b3b3b url(img/bg/graynoise.png) repeat;
 }
 
 #wrapper {
@@ -111,7 +111,7 @@ body {
 	margin: 0 auto;
 	min-height: 100%;
 	position: relative;
-	background: url(img/bg/darknoise.png) repeat-y;
+	background: url(img/bg/lightnoise.png) repeat-y;
 }
 
 #container {
@@ -130,7 +130,6 @@ body {
 header {
 	width: 100%;
 	overflow: hidden;
-	background: #3b3b3b url(img/bg/lightnoise.png) repeat;
 }
 
 #logo {
@@ -159,7 +158,7 @@ nav {
 			overflow: hidden;
 
 			&:hover {
-				border-bottom: 5px solid rgba(0, 0, 0, .7);
+				border-bottom: 5px solid rgba(255, 255, 255, 0.7);
 			}
 
 			img {
@@ -180,11 +179,13 @@ nav {
 
 #sidebar-left {
 	width: @sidebarWidth;
+	min-height: 100px;
 	float: left;
 	overflow: hidden;
+	padding: 30px 0 0 0;
 	
-	color: @textColorLight;
-	text-shadow: #000 0 -1px;
+	color: @textColorDark;
+	text-shadow: #fff 0 1px;
 }
 
 #sidebar-right {
@@ -196,6 +197,60 @@ nav {
 .sidebar-content {
 	width: @sidebarWidth - 30px;
 	padding: 15px;
+}
+
+/*	Progress bar
+ * =============================================== */
+#progressbar-frame {
+	width: @sidebarWidth - 38px;
+	padding: 4px;
+	height: 10px;
+	background: rgba(255, 255, 255, 1);
+
+	.BorderRadius (4px, 4px, 4px, 4px);
+	.BoxShadowInset	(0, 1px, 2px, rgba(0, 0, 0, 0.5));
+}
+
+#progressbar-bg {
+	width: 100%;
+	height: 10px;
+	background: rgba(0, 0, 0, 0.4);
+
+	.BorderRadius (2px, 2px, 2px, 2px);
+	.BoxShadowInset	(0, 1px, 4px, rgba(0, 0, 0, 0.5));
+}
+
+#progress {
+	height: 10px;
+	background: rgba(0, 0, 0, 0.5);
+	float: left;
+
+	.BorderRadius (2px, 2px, 2px, 2px);
+}
+
+#progresspointer {
+	float: left;
+	height: 29px;
+	width: 45px;
+	margin: -30px 0 0 -23px;
+	padding: 2px 0 0 0;
+	background: url(img/progresspointer.png) no-repeat;
+
+	text-align: center;
+	color: #000;
+	font-size: 10px;
+}
+
+#progressbar-text-right {
+	text-align: right;
+	padding: 2px 5px 0 0;
+	float: right;
+}
+
+#progressbar-text-left {
+	text-align: left;
+	padding: 2px 0 0 5px;
+	float: left;
 }
 
 
@@ -213,31 +268,43 @@ nav {
 	clear: both;
 	width: 100%;
 	height: 5px;
-	background: rgba(0, 0, 0, .3);
+	background: rgba(0, 0, 0, 0.3);
 	margin: 0 0 20px 0;
 }
 
 .divider-medium {
 	width: 100%;
 	height: 2px;
-	background: rgba(0, 0, 0, .2);
+	background: rgba(0, 0, 0, 0.2);
 	margin: 10px 0;
 }
 
 .divider-small {
 	width: 100%;
 	height: 1px;
-	background: rgba(0, 0, 0, .5);
-	box-shadow: 0 1px 0 rgba(255, 255, 255, .75);
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
 }
 
 /*	Moviedetails specific
  * =============================================== */
-#movie-plot {
-	width: 70%;
+#moviedetails-plot {
+	width: 65%;
 	overflow: hidden;
 	float: right;
 	text-align: left;
+}
+
+#moviedetails-poster {
+	width: 30%;
+	margin: 10px 0;
+	overflow: hidden;
+	float: left;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 /*	Movieall specific
@@ -250,7 +317,7 @@ nav {
 		padding-right: 10px;
 
 		&:hover {
-			color: #000;
+			color: #fff;
 		}
 	}
 }
@@ -268,7 +335,7 @@ nav {
 	img {
 		width: 160px;
 		height: auto;
-		-webkit-box-reflect: below 1px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.8, transparent), to(rgba(255, 255, 255, 0.25)));
+		-webkit-box-reflect: below 1px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.8, transparent), to(rgba(255, 255, 255, 0.25)));
 	}
 }
 
