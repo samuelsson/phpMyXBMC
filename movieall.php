@@ -3,8 +3,6 @@
 	get_header();
 ?>
 
-<h1>All movies</h1>
-<div class="divider-large"></div>
 <div class="movieall-charchooser">
 
 	<?php
@@ -19,8 +17,6 @@
 
 </div>
 
-<div class="divider-large"></div>
-
 <?php
 
 	// Checks if there is a char set in the url bar, otherwise do nothing
@@ -33,7 +29,7 @@
 			$alphabet = range('a', 'z');
 
 			$sql = "
-				SELECT idFile, c00, c09 
+				SELECT idFile, c00, strPath 
 				FROM movieview 
 				WHERE LEFT(c00,1) != 'a' 
 			";
@@ -47,10 +43,10 @@
 
 		else {
 			$sql = "
-				SELECT idFile, c00, c09 
+				SELECT idFile, c00, strPath 
 				FROM movieview 
 				WHERE LEFT(c00,1) = :char 
-				ORDER BY c00
+				ORDER BY c00 ASC
 			";
 		}
 
@@ -66,18 +62,21 @@
 		// Loops through the array and prints out information for every movie
 		for($i = 0, $size = sizeof($result); $i < $size; ++$i) {
 			
+			$movieID = $result[$i]["idFile"];
+			$movieHash = get_hash($result[$i]["strPath"]);
+			$movieName = $result[$i]['c00'];
 			
 			echo '
 				<div class="coverframe">
 					
-					<a href="moviedetails.php?id=' . $result[$i]["idFile"] . '">
+					<a href="moviedetails.php?id=' . $movieID . '">
 						<div class="coverframe-picture">
-							<img src="img/movieposters/' . $result[$i]["c09"] . '.jpg" />
+							<img src="img/Thumbnails/Video/' . substr($movieHash, 0, 1) . '/' . $movieHash . '.tbn" />
 						</div>
 					</a>
 					
 					<div class="coverframe-text">
-						<a href="moviedetails.php?id=' . $result[$i]["idFile"] . '">' . $result[$i]['c00'] . '</a>
+						<a href="moviedetails.php?id=' . $movieID . '">' . $movieName . '</a>
 					</div>
 
 				</div>

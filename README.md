@@ -30,15 +30,17 @@ Mac OS X:
 > Joseph Wain  
 > [Glyphish Icons](http://www.glyphish.com/) 
 
+> tamplan & narfight @ XBMC Forum  
+> [Thumbnail hash script](http://forum.xbmc.org/showthread.php?t=85445)
+
 ## ToDo  
+* Ignore "The", "An" and "A" when sorting movies/shows.  
+* Fix number sorting, "2" gets sorted before "10" for example
 * ~~Fix the PDO Database connection~~  
-* ~~Create a navigation bar~~  
 * Finish the design (mostly CSS)  
-* ~~Connect to TMDb with API for poster request~~  
-* Code a function where all TMBd images gets cached and loaded when needed  
 * Improve queries for better performance  
 * Make the PHP object oriented  
-* Code clean up  
 * Fix sessions/cookies (probably more focused on sessions)  
 * ~~Don't load all movies/shows on the same page~~  
 * ~~Fix the jQuery window resize bug when making a small window larger~~  
+* Create a settings page for individual settings per user, saved in DB  

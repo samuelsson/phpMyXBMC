@@ -1,6 +1,4 @@
-		</div> <!-- end #content -->
-
-	</div> <!-- end #container -->
+	</div> <!-- end #content -->
 
 	<footer>
 	</footer>

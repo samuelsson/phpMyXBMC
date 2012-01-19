@@ -41,7 +41,6 @@
 <h1><?php echo $movieTitle; ?></h1>
 <h5><?php echo $movieOutline; ?></h5>
 
-<div class="divider-large"></div>
 
 <div id="moviedetails-poster">
 	<img src="img/movieposters/<?php echo $movieImdb; ?>.jpg">

@@ -4,7 +4,6 @@
    ============================================================================================== */
 
 @import url("styles/normalize.css");
-@import url(http://fonts.googleapis.com/css?family=Linden+Hill);
 
 
 
@@ -51,21 +50,12 @@
 @highlightColor: #9966cc;	// Highlighted color, aka the second color. A color that stands out from the other ones.
 @textColorDark: #333;		// A light color for dark backgrounds, the sidebar for example.
 
-@headerOneSize: 48px;		// Font size of the first header, easier to decide all the other headers this way.
-
-@defaultFont: 'Linden Hill', serif;
-@sidebarFont: 'Helvetica', 'Arial', 'Helvetica Neue', 'Nimbus Sans L', sans-serif;
+@defaultFont: 'Helvetica';
 
 body {
 	color: @textColor;
 	font-family: @defaultFont;
 	font-size: 16px;
-	text-shadow: #000 0 -1px;
-}
-
-.sidebar-content {
-	font-family: @sidebarFont;
-	font-size: 11px;
 }
 
 h1,
@@ -78,13 +68,6 @@ h6 {
 	font-weight: normal;
 	margin: 0;
 }
-
-h1 { font-size: @headerOneSize; }
-h2 { font-size: @headerOneSize - 6; }
-h3 { font-size: @headerOneSize - 12; }
-h4 { font-size: @headerOneSize - 18; }
-h5 { font-size: @headerOneSize - 28; }
-h6 { font-size: @headerOneSize - 32; }
 
 a,
 a:visited,
@@ -101,24 +84,7 @@ a:active {
 
 html,
 body {
-	height: 100%;
-	width: 100%;
-	background: #3b3b3b url(img/bg/graynoise.png) repeat;
-}
-
-#wrapper {
-	width: 100%;
-	margin: 0 auto;
-	min-height: 100%;
-	position: relative;
-	background: url(img/bg/lightnoise.png) repeat-y;
-}
-
-#container {
-	height: 100%;
-	min-width: 960px;
-	padding-bottom: @footerHeight;
-	overflow: hidden;
+	background: #222;
 }
 
 
@@ -127,134 +93,17 @@ body {
 	The site header with logo.
    ============================================================================================== */
 
-header {
-	width: 100%;
-	overflow: hidden;
-}
-
-#logo {
-	height: 60px;
-	width: @sidebarWidth;
-	float: left;
-	overflow: hidden;
-}
-
 
 
 /* ==|== Nav ====================================================================================
 	The navigation with links.
    ============================================================================================== */
 
-nav {
-	overflow: hidden;
-
-	ul {
-		clear: both;
-
-		li {
-			margin: 0 20px 0 10px;
-			float: left;
-			font-size: 18px;
-			overflow: hidden;
-
-			&:hover {
-				border-bottom: 5px solid rgba(255, 255, 255, 0.7);
-			}
-
-			img {
-				padding: 5px 5px 0 0;
-				height: 22px;
-			}
-		}
-	}
-}
-
 
 
 /* ==|== Sidebars ===============================================================================
 	The sidebars.
    ============================================================================================== */
-
-@sidebarWidth: 250px;
-
-#sidebar-left {
-	width: @sidebarWidth;
-	min-height: 100px;
-	float: left;
-	overflow: hidden;
-	padding: 30px 0 0 0;
-	
-	color: @textColorDark;
-	text-shadow: #fff 0 1px;
-}
-
-#sidebar-right {
-	width: 0px;
-	float: right;
-	overflow: hidden;
-}
-
-.sidebar-content {
-	width: @sidebarWidth - 30px;
-	padding: 15px;
-}
-
-/*	Progress bar
- * =============================================== */
-#progressbar-frame {
-	width: @sidebarWidth - 38px;
-	padding: 4px;
-	height: 10px;
-	background: rgba(255, 255, 255, 1);
-
-	.BorderRadius (4px, 4px, 4px, 4px);
-	.BoxShadowInset	(0, 1px, 2px, rgba(0, 0, 0, 0.5));
-}
-
-#progressbar-bg {
-	width: 100%;
-	height: 10px;
-	background: rgba(0, 0, 0, 0.1);
-
-	.BorderRadius (2px, 2px, 2px, 2px);
-	.BoxShadowInset	(0, 1px, 4px, rgba(0, 0, 0, 0.5));
-}
-
-#progress {
-	height: 10px;
-	background: url(img/bg/progressbar.png);
-	opacity: 0.9;
-	float: left;
-
-	.BorderRadius (2px, 2px, 2px, 2px);
-	.BoxShadowInset	(0, 1px, 1px, rgba(0, 0, 0, 0.9));
-}
-
-#progresspointer {
-	float: left;
-	height: 29px;
-	width: 45px;
-	margin: -30px 0 0 -23px;
-	padding: 3px 0 0 0;
-	background: url(img/progresspointer.png) no-repeat;
-
-	text-align: center;
-	color: #555;
-	font-size: 11px;
-	font-weight: bold;
-}
-
-#progressbar-text-right {
-	text-align: right;
-	padding: 2px 5px 0 0;
-	float: right;
-}
-
-#progressbar-text-left {
-	text-align: left;
-	padding: 2px 0 0 5px;
-	float: left;
-}
 
 
 
@@ -265,28 +114,6 @@ nav {
 #content {
 	overflow: hidden;
 	padding: 20px 50px;
-}
-
-.divider-large {
-	clear: both;
-	width: 100%;
-	height: 5px;
-	background: rgba(0, 0, 0, 0.3);
-	margin: 0 0 20px 0;
-}
-
-.divider-medium {
-	width: 100%;
-	height: 2px;
-	background: rgba(0, 0, 0, 0.2);
-	margin: 10px 0;
-}
-
-.divider-small {
-	width: 100%;
-	height: 1px;
-	background: rgba(0, 0, 0, 0.5);
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
 }
 
 /*	Moviedetails specific
@@ -338,7 +165,6 @@ nav {
 	img {
 		width: 160px;
 		height: auto;
-		-webkit-box-reflect: below 1px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.8, transparent), to(rgba(255, 255, 255, 0.25)));
 	}
 }
 
@@ -351,13 +177,3 @@ nav {
 /* ==|== Footer =================================================================================
 	The footer of the page with disclaimers and stuff.
    ============================================================================================== */
-
-@footerHeight: 0px;
-
-footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: @footerHeight;
-	margin-top: 100px;
-}
