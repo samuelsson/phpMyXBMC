@@ -6,7 +6,7 @@
 config.php
 */temp
 *temp
-img/movieposters/*
+img/movieposters
 sftp-settings.json
 
 # Compiled source #

@@ -10,9 +10,6 @@
 
 	//	Config file
 	require('config.php');
-
-	// The TMDb connection with API
-	include('TMDb.php');
 	
 	//	Header
 	function get_header() {

@@ -26,7 +26,7 @@
 			'id' => $_GET['id']
 		));
 
-		$result = $STH->fetchAll();
+		$result = $STH->fetchAll(PDO::FETCH_ASSOC);
 
 		// Save all the important information in variables for use later in the HTML code
 		foreach($result as $row) {

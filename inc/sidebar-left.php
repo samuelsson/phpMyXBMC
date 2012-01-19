@@ -26,7 +26,8 @@
 	$STH->execute();
 	$movieTotal = $STH->fetchColumn();
 
-	$percent = "29";
+	// This calculates movie progress in percent (without decimals) and saves to a variable
+	$percent = round($movieWatched / $movieTotal * 100);
 	
 ?>
 
