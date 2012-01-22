@@ -12,6 +12,8 @@
 <body>
 
 <div id="sidebar">
+	<header>
+	</header>
 	<div class="clear"></div>
 </div>
 

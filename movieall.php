@@ -15,6 +15,8 @@
 		}
 	?>
 
+	<div class="clear"></div>
+
 </div>
 
  
@@ -72,7 +74,7 @@
 				<div class="coverframe">
 					
 					<a href="moviedetails.php?id=' . $movieID . '">
-						<div class="coverframe-picture" style="background:url(img/Thumbnails/Video/' . substr($movieHash, 0, 1) . '/' . $movieHash . '.tbn) no-repeat center center;">
+						<div class="coverframe-picture" style="background:url(img/Thumbnails/Video/' . substr($movieHash, 0, 1) . '/' . $movieHash . '.tbn) no-repeat center center; background-size:122px auto;">
 							<img src="img/Thumbnails/Video/' . substr($movieHash, 0, 1) . '/' . $movieHash . '.tbn" />
 						</div>
 					</a>

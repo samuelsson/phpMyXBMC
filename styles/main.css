@@ -34,13 +34,14 @@ html, body {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -100px 220px;
+	margin: 0 auto -100px 220px; /* Set the bottom margin to same value as footer-push */
 }
 
 #container {
-	padding: 0 20px;
-	background: -moz-linear-gradient(top, rgba(255, 255, 255, .2), rgba(0, 0, 0, 0) 300);
-	background: -webkit-gradient(linear, 0 0, 0 300, from(rgba(255, 255, 255, .2)), to(rgba(0, 0, 0, 0)));  
+	min-height: 300px;
+	padding: 20px 20px 0;
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, .1), rgba(0, 0, 0, 0) 300px);
+	background: -webkit-gradient(linear, 0 0, 0 300, from(rgba(255, 255, 255, .1)), to(rgba(0, 0, 0, 0)));  
 }
 
 .clear {
@@ -54,7 +55,9 @@ html, body {
    ============================================================================================== */
 
 header {
-	height: 1px;
+	height: 30px;
+	background: #2a2a2a;
+	border-bottom: 1px solid rgba(0, 0, 0, .8);
 }
 
 
@@ -110,16 +113,16 @@ header {
  * =============================================== */
 .coverframe {
 	float: left;
-	width: 152px;
+	width: 122px;
 	margin: 0 20px 20px;
 }
 
 .coverframe-picture {
-	width: 150px;
+	min-height: 150px;
+	width: 120px;
 	height: auto;
 	margin: 0 0 5px 0;
 	border: 1px solid #000;
-	background-size: 152px auto;
 
 	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, .3);
 	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, .3);
@@ -127,7 +130,7 @@ header {
 }
 
 .coverframe-picture img {
-	width: 150px;
+	width: 120px;
 	height: auto;
 	opacity: 0;
 }

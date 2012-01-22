@@ -34,6 +34,9 @@ Mac OS X:
 > tamplan & narfight @ XBMC Forum  
 > [Thumbnail hash script](http://forum.xbmc.org/showthread.php?t=85445)
 
+## Bugs and Insects  
+* The hash code generator doesn't work properly when path name contains foreign characters, such as Å, Ä, Ö, Ü, etc.  
+
 ## ToDo  
 * Ignore "The", "An" and "A" when sorting movies/shows.  
 * Fix number sorting, "2" gets sorted before "10" for example
