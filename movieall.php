@@ -17,9 +17,10 @@
 
 </div>
 
+ 
 <?php
 
-	// Checks if there is a char set in the url bar, otherwise do nothing
+	// Checks if there is a char set in the url bar, otherwise -> else
 	if (isset($_GET['char'])) {
 		
 		$sel_char = $_GET['char'];
@@ -29,7 +30,7 @@
 			$alphabet = range('a', 'z');
 
 			$sql = "
-				SELECT idFile, c00, strPath 
+				SELECT idFile, c00, strPath, playCount 
 				FROM movieview 
 				WHERE LEFT(c00,1) != 'a' 
 			";
@@ -43,7 +44,7 @@
 
 		else {
 			$sql = "
-				SELECT idFile, c00, strPath 
+				SELECT idFile, c00, strPath, playCount 
 				FROM movieview 
 				WHERE LEFT(c00,1) = :char 
 				ORDER BY c00 ASC
@@ -65,6 +66,7 @@
 			$movieID = $result[$i]["idFile"];
 			$movieHash = get_hash($result[$i]["strPath"]);
 			$movieName = $result[$i]['c00'];
+			$moviePlayed = $result[$i]['playCount'];
 			
 			echo '
 				<div class="coverframe">
@@ -85,8 +87,8 @@
 		}
 	}
 
-?>
+	else {
+	}
 
-<?php
 	get_footer();
 ?>

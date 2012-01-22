@@ -1,9 +1,12 @@
-	</div> <!-- end #content -->
 
-	<footer>
-	</footer>
-
+		<div class="clear"></div>
+	</div> <!-- end #container -->
+	
+	<div class="footer-push"></div>
 </div> <!-- end #wrapper -->
+
+<footer class="footer-push">
+</footer>
 
 </body>
 </html>
