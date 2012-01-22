@@ -27,18 +27,20 @@ a:active {
 
 html, body {
 	height: 100%;
-	background-color: #1a1a1a;
+	background: #333 url('../img/body-bg.png');
 }
 
 #wrapper {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -100px 200px;
+	margin: 0 auto -100px 220px;
 }
 
 #container {
 	padding: 0 20px;
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, .2), rgba(0, 0, 0, 0) 300);
+	background: -webkit-gradient(linear, 0 0, 0 300, from(rgba(255, 255, 255, .2)), to(rgba(0, 0, 0, 0)));  
 }
 
 .clear {
@@ -52,8 +54,7 @@ html, body {
    ============================================================================================== */
 
 header {
-	height: 50px;
-	background-color: #333;
+	height: 1px;
 }
 
 
@@ -70,9 +71,9 @@ header {
 
 #sidebar {
 	float: left;
-	width: 200px;
+	width: 220px;
 	height: 100%;
-	background-color: #fff;
+	background: #222 url('../img/sidebar-bg.png');
 	position: fixed;
 }
 
@@ -98,31 +99,37 @@ header {
  * =============================================== */
 .movieall-charchooser {
 	text-align: center;
-	margin: 20px 0;
+	margin: 0 0 20px 0;
 }
 	
 .movieall-charchooser a {
 	padding: 0 5px;
 }
 
-.movieall-charchooser a:hover {
-	color: #fff;
-}
-
 /*  Coverframe
  * =============================================== */
 .coverframe {
 	float: left;
-	width: 120px;
-	margin: 0 10px 20px;
+	width: 152px;
+	margin: 0 20px 20px;
 }
 
 .coverframe-picture {
+	width: 150px;
+	height: auto;
+	margin: 0 0 5px 0;
+	border: 1px solid #000;
+	background-size: 152px auto;
+
+	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, .3);
+	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, .3);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, .3);
 }
 
 .coverframe-picture img {
-	width: 120px;
+	width: 150px;
 	height: auto;
+	opacity: 0;
 }
 
 .coverframe-text {
@@ -141,6 +148,5 @@ header {
 }
 
 footer {
-	background: #000;
 	margin: 0 0 0 200px;
 }

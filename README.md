@@ -5,7 +5,8 @@ This will only work with newer browsers with support for the latest versions of 
 So if you are using Internet Explorer this won't work (and even if it would work you shouldn't use IE anyway).  
 
 ## Installation  
-First of all you need your thumbnails folder from XBMC to be either placed in */img/thumbnails* or mounted in the same location.
+First of all you need your thumbnails folder from XBMC to be placed inside the img folder (/img/Thumbnails).  
+This can be done in different ways but in my opinion there are two ways that both work great.
 
 By default your thumbnails folder is located here:  
 Windows:  
