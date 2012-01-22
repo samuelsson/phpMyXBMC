@@ -69,23 +69,28 @@
 			$movieHash = get_hash($result[$i]["strPath"]);
 			$movieName = $result[$i]['c00'];
 			$moviePlayed = $result[$i]['playCount'];
-			
-			echo '
-				<div class="coverframe">
-					
-					<a href="moviedetails.php?id=' . $movieID . '">
-						<div class="coverframe-picture" style="background:url(img/Thumbnails/Video/' . substr($movieHash, 0, 1) . '/' . $movieHash . '.tbn) no-repeat center center; background-size:122px auto;">
-							<img src="img/Thumbnails/Video/' . substr($movieHash, 0, 1) . '/' . $movieHash . '.tbn" />
-						</div>
-					</a>
-					
-					<div class="coverframe-text">
-						<a href="moviedetails.php?id=' . $movieID . '">' . $movieName . '</a>
-					</div>
+?>
 
-				</div>
-			';
+<div class="coverframe">
+	
+	<a href="moviedetails.php?id=<?php echo $movieID; ?>">
+		<div class="coverframe-picture" style="background:url(img/Thumbnails/Video/<?php echo substr($movieHash, 0, 1); ?>/<?php echo $movieHash; ?>.tbn) no-repeat center center; background-size:122px auto;">
+			<?php 
+				if ($moviePlayed != null) {
+					echo '<img src="img/watched.png" class="watched-overlay"/>';
+				}
+			?>
+			<img src="img/Thumbnails/Video/<?php echo substr($movieHash, 0, 1); ?>/<?php echo $movieHash; ?>.tbn" class="poster-picture" />
+		</div>
+	</a>
+	
+	<div class="coverframe-text">
+		<a href="moviedetails.php?id=' . $movieID . '"><?php echo $movieName; ?></a>
+	</div>
 
+</div>
+
+<?php
 		}
 	}
 
