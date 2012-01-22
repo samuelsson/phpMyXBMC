@@ -8,6 +8,7 @@ config.php
 *temp
 img/Thumbnails
 sftp-settings.json
+.gitignore
 
 # Compiled source #
 ###################
