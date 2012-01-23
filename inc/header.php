@@ -11,9 +11,7 @@
 </head>
 <body>
 
-<div id="sidebar">
-	<div class="clear"></div>
-</div>
+<?php get_sidebar(); ?>
 
 <div id="wrapper">
 

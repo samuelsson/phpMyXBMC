@@ -16,6 +16,11 @@
 		include('header.php');
 	}
 
+	//	Sidebar
+	function get_sidebar() {
+		include('sidebar.php');
+	}
+
 	//	Footer
 	function get_footer() {
 		include('footer.php');
